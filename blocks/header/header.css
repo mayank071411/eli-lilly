@@ -209,7 +209,7 @@ header nav .nav-sections ul > li > ul > li {
     cursor: pointer;
   }
 
-  header nav .nav-sections .nav-drop::after {
+  header nav .nav-sections .nav-drop>ul::before {
     content: '';
     display: inline-block;
     /* position: absolute; */
