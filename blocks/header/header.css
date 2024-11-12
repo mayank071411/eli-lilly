@@ -278,5 +278,9 @@ header nav .nav-tools {
   grid-area: tools;
 }
 
-ul>li>ul{display:none}
-ul>li:hover>ul, ul>li:selected>ul{display:block}
+.nav-sections>li>ul{
+  display: none;
+ }
+ .nav-sections>li:target>ul{
+  display:block;
+ }
