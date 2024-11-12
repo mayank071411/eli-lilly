@@ -150,7 +150,7 @@ export default async function decorate(block) {
         item.addEventListener('click', () => {
           if (isDesktop.matches) {
             const expanded = item.getAttribute('aria-expanded') === 'true';
-            toggleAllNavSections(navSection);
+            toggleAllNavSections(item);
             item.setAttribute('aria-expanded', expanded ? 'false' : 'true');
           }
         });
