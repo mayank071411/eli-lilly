@@ -146,6 +146,11 @@ export default async function decorate(block) {
       const listItemsWithSublist = navSection.querySelectorAll('li:has(> ul)');
 
       listItemsWithSublist.forEach(item => {
+        // Select the first <ul> inside an <li>
+        var firstUl = item.querySelector('li > ul');
+
+        // Add a class to it
+        firstUl.classList.add('submenu');
         item.classList.add('nav-drop');
         item.addEventListener('click', () => {
           if (isDesktop.matches) {
@@ -175,4 +180,17 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  
+  const menuItems = document.querySelectorAll('.nav-drop');
+
+  menuItems.forEach(item => {
+    item.classList.toggle('active');
+    item.querySelector('.menu-link').addEventListener('click', function (e) {
+      // Prevent default link behavior
+      e.preventDefault();
+
+      // Toggle active class to show/hide submenu
+      item.classList.toggle('active');
+    });
+  });
 }

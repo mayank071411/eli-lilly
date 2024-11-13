@@ -285,3 +285,25 @@ header nav .nav-tools {
  .nav-sections li:target>ul{
   display:block;
  }
+
+ .submenu {
+  display: none;
+  list-style-type: none;
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+
+.submenu li a {
+  padding: 8px;
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.submenu li a:hover {
+  background-color: #666;
+}
+
+/* Show submenu when active */
+.nav-drop.active > .submenu {
+  display: block;
+}
